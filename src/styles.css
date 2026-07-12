@@ -1,0 +1,141 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --font-sans: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", ui-serif, Georgia, serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 1.25rem;
+  --background: oklch(97.2% 0.018 92);
+  --foreground: oklch(30% 0.06 148);
+  --card: oklch(99.5% 0.01 95);
+  --card-foreground: oklch(30% 0.06 148);
+  --popover: oklch(99.5% 0.01 95);
+  --popover-foreground: oklch(30% 0.06 148);
+  --primary: oklch(42% 0.1 148);
+  --primary-foreground: oklch(98.5% 0.012 92);
+  --primary-soft: oklch(93% 0.045 145);
+  --secondary: oklch(93% 0.035 100);
+  --secondary-foreground: oklch(32% 0.06 148);
+  --muted: oklch(94% 0.025 100);
+  --muted-foreground: oklch(48% 0.04 135);
+  --accent: oklch(70% 0.13 75);
+  --accent-foreground: oklch(98% 0.01 95);
+  --destructive: oklch(57.7% 0.245 27.325);
+  --destructive-foreground: oklch(98.4% 0.003 247.858);
+  --border: oklch(86% 0.03 120);
+  --input: oklch(90% 0.025 110);
+  --ring: oklch(50% 0.1 148);
+}
+
+.dark {
+  --background: oklch(18% 0.02 150);
+  --foreground: oklch(94% 0.02 100);
+  --card: oklch(22% 0.03 150);
+  --card-foreground: oklch(94% 0.02 100);
+  --popover: oklch(22% 0.03 150);
+  --popover-foreground: oklch(94% 0.02 100);
+  --primary: oklch(78% 0.14 148);
+  --primary-foreground: oklch(15% 0.02 150);
+  --primary-soft: oklch(30% 0.05 150);
+  --secondary: oklch(28% 0.03 150);
+  --secondary-foreground: oklch(94% 0.02 100);
+  --muted: oklch(28% 0.03 150);
+  --muted-foreground: oklch(78% 0.03 130);
+  --accent: oklch(72% 0.13 75);
+  --accent-foreground: oklch(15% 0.02 150);
+  --destructive: oklch(70.4% 0.191 22.216);
+  --destructive-foreground: oklch(98.4% 0.003 247.858);
+  --border: oklch(100% 0 0 / 0.14);
+  --input: oklch(100% 0 0 / 0.16);
+  --ring: oklch(78% 0.14 148);
+}
+
+.theme-green {
+  --background: oklch(38% 0.09 150);
+  --foreground: oklch(98% 0.02 100);
+  --card: oklch(44% 0.1 150);
+  --card-foreground: oklch(98% 0.02 100);
+  --popover: oklch(44% 0.1 150);
+  --popover-foreground: oklch(98% 0.02 100);
+  --primary: oklch(93% 0.1 140);
+  --primary-foreground: oklch(30% 0.1 150);
+  --primary-soft: oklch(50% 0.1 150);
+  --secondary: oklch(50% 0.1 150);
+  --secondary-foreground: oklch(98% 0.02 100);
+  --muted: oklch(50% 0.1 150);
+  --muted-foreground: oklch(92% 0.05 130);
+  --accent: oklch(86% 0.14 90);
+  --accent-foreground: oklch(30% 0.1 150);
+  --border: oklch(100% 0 0 / 0.2);
+  --input: oklch(100% 0 0 / 0.22);
+  --ring: oklch(93% 0.1 140);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* Font-size preference scaling */
+:root[data-font="sm"] {
+  font-size: 15px;
+}
+:root[data-font="md"] {
+  font-size: 16px;
+}
+:root[data-font="lg"] {
+  font-size: 18px;
+}
+
+/* Decorative Maya greca side border */
+.greca-side {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='120' viewBox='0 0 60 120'><g fill='none' stroke='%232f5d3a' stroke-width='2' opacity='0.35'><path d='M8 8 h44 v18 h-30 v10 h20 v10 h-14 v10 h20 v18 h-44 v-18 h30 v-10 h-20 v-10 h14 v-10 h-20z'/><path d='M8 68 h44 v18 h-30 v10 h20 v10 h-14 v6'/></g></svg>");
+  background-repeat: repeat-y;
+  background-size: 60px;
+}
